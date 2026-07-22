@@ -9,5 +9,6 @@ import ua.lazydev418.what_remains.util.Constants;
 public class WhatRemains {
     public WhatRemains(IEventBus eventBus) {
         CreativeTab.register(eventBus);
+        Constants.LOGGER.info("Йо, Святе.");
     }
 }
