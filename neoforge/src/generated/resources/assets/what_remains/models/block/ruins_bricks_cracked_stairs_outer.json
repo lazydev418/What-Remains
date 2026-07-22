@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "what_remains:block/ruins_bricks_cracked",
+    "side": "what_remains:block/ruins_bricks_cracked",
+    "top": "what_remains:block/ruins_bricks_cracked"
+  }
+}
