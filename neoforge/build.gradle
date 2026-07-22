@@ -10,6 +10,15 @@ neoForge {
     if (at.exists()) {
         accessTransformers.from(at.absolutePath)
     }
+    repositories {
+        maven {
+            name = "CurseMaven"
+            url = "https://cursemaven.com"
+        }
+    }
+    dependencies {
+        implementation("curse.maven:geckolib-388172:8327604")
+    }
     runs {
         configureEach {
             systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
