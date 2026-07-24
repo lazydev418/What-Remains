@@ -10,7 +10,10 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import ua.lazydev418.what_remains.WhatRemains;
+import ua.lazydev418.what_remains.registry.block.custom.FireCrystal;
 import ua.lazydev418.what_remains.registry.block.custom.ModFacing;
+import ua.lazydev418.what_remains.registry.block.custom.RuinsFire;
+import ua.lazydev418.what_remains.registry.block.custom.TallTorchBlock;
 import ua.lazydev418.what_remains.registry.item.ModItems;
 import ua.lazydev418.what_remains.util.Constants;
 
@@ -73,8 +76,19 @@ public class ModBlocks {
             -> new ModFacing(copyPropsWithId(Blocks.STONE_BRICKS.properties(), Blocks.STONE_BRICKS).noOcclusion()) {
     });
 
+    public static final DeferredBlock<Block> TALL_TORCH = registerBlock("tall_torch", properties
+            -> new TallTorchBlock(copyPropsWithId(Blocks.TORCH.properties(), Blocks.TORCH).noOcclusion()) {
+    });
 
 
+
+    public static final DeferredBlock<Block> FIRE_CRYSTAL = registerBlock("fire_crystal", properties
+            -> new FireCrystal(copyPropsWithId(Blocks.SEA_LANTERN.properties(), Blocks.SEA_LANTERN).noOcclusion()) {
+    });
+
+    public static final DeferredBlock<Block> RUINS_FIRE = registerBlock("ruins_fire", properties
+            -> new RuinsFire(copyPropsWithId(Blocks.SEA_LANTERN.properties(), Blocks.SEA_LANTERN).noOcclusion()) {
+    });
 
     private static BlockBehaviour.Properties copyPropsWithId(BlockBehaviour.Properties properties, Block from) {
         return properties
