@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "half=lower": { "model": "what_remains:block/tall_torch_bottom" },
+
+    "half=upper": { "model": "what_remains:block/tall_torch_top" }
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "what_remains:block/ruins_bricks_mossy_slab"
+    },
+    "type=double": {
+      "model": "what_remains:block/ruins_bricks_mossy"
+    },
+    "type=top": {
+      "model": "what_remains:block/ruins_bricks_mossy_slab_top"
+    }
+  }
+}
