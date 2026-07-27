@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "what_remains:block/ruins_bricks_polished_top",
+    "side": "what_remains:block/ruins_bricks_polished"
+  }
+}

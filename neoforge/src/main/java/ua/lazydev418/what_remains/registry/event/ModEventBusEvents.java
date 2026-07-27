@@ -4,6 +4,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import ua.lazydev418.what_remains.registry.entity.ModEntities;
+import ua.lazydev418.what_remains.registry.entity.custom.FireDemonSmallEntity;
 import ua.lazydev418.what_remains.registry.particle.ModParticles;
 import ua.lazydev418.what_remains.registry.particle.custom.RuinFireBigParticle;
 import ua.lazydev418.what_remains.registry.particle.custom.RuinFireMediumParticle;
@@ -15,7 +17,9 @@ public class ModEventBusEvents {
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
-        //event.put(ModEntities.BUTTERFLY.get(), ButterflyEntity.createAttributes().build());
+        event.put(ModEntities.FIRE_DEMON_SMALL.get(), FireDemonSmallEntity.createAttributes().build());
+
+        event.put(ModEntities.FIRE_DEMON_MEDIUM.get(), FireDemonSmallEntity.createAttributes().build());
     }
 
     @SubscribeEvent

@@ -67,6 +67,10 @@ public class ModBlocks {
             -> new WallBlock(copyPropsWithId(Blocks.STONE_BRICKS.properties(), Blocks.STONE_BRICKS)));
 
 
+    public static final DeferredBlock<Block> RUINS_BRICKS_POLISHED = registerBlock("ruins_bricks_polished", properties
+            -> new Block(copyPropsWithId(Blocks.STONE_BRICKS.properties(), Blocks.STONE_BRICKS)));
+
+
 
     public static final DeferredBlock<Block> RUINS_STATUE = registerBlock("ruins_statue", properties
             -> new ModFacing(copyPropsWithId(Blocks.STONE_BRICKS.properties(), Blocks.STONE_BRICKS).noOcclusion()) {
@@ -88,6 +92,12 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> RUINS_FIRE = registerBlock("ruins_fire", properties
             -> new RuinsFire(copyPropsWithId(Blocks.SEA_LANTERN.properties(), Blocks.SEA_LANTERN).noOcclusion()) {
+    });
+
+
+
+    public static final DeferredBlock<Block> SMALL_POT = registerBlock("small_pot", properties
+            -> new ModFacing(copyPropsWithId(Blocks.FLOWER_POT.properties(), Blocks.FLOWER_POT).noOcclusion()) {
     });
 
     private static BlockBehaviour.Properties copyPropsWithId(BlockBehaviour.Properties properties, Block from) {
