@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=north": [
+      {"model": "what_remains:block/small_pot"}
+    ],
+    "facing=south": [
+      {"model": "what_remains:block/small_pot", "y": 180 }
+    ],
+    "facing=west": [
+      {"model": "what_remains:block/small_pot", "y": 270 }
+    ],
+    "facing=east": [
+      {"model": "what_remains:block/small_pot", "y": 90 }
+    ]
+  }
+}

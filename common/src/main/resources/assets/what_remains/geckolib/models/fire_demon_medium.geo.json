@@ -1,0 +1,82 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "all",
+					"pivot": [0, 19, 0]
+				},
+				{
+					"name": "bottom_fire",
+					"parent": "all",
+					"pivot": [0, 15, -3],
+					"cubes": [
+						{"origin": [-5, 7, -3], "size": [10, 8, 6], "uv": [0, 15]},
+						{"origin": [-4, 3, -2], "size": [8, 11, 4], "uv": [32, 12]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "all",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{"origin": [-4, 24, -4], "size": [8, 5, 8], "uv": [0, 29]}
+					]
+				},
+				{
+					"name": "top_fire",
+					"parent": "head",
+					"pivot": [0, 29, -4],
+					"cubes": [
+						{"origin": [-4, 29, -4], "size": [8, 4, 8], "uv": [32, 0]}
+					]
+				},
+				{
+					"name": "torso",
+					"parent": "all",
+					"pivot": [0, 15, 0],
+					"cubes": [
+						{"origin": [-5, 15, -3], "size": [10, 9, 6], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "hand_left",
+					"parent": "all",
+					"pivot": [-5, 22, 0],
+					"rotation": [0, 0, 2.5],
+					"cubes": [
+						{"origin": [-9, 13, -2.5], "size": [4, 11, 5], "uv": [32, 27]}
+					]
+				},
+				{
+					"name": "RightHandItem",
+					"parent": "hand_left",
+					"pivot": [-7, 15, -2.5]
+				},
+				{
+					"name": "hand_right",
+					"parent": "all",
+					"pivot": [5, 22, 0],
+					"rotation": [0, 0, -2.5],
+					"cubes": [
+						{"origin": [5, 13, -2.5], "size": [4, 11, 5], "uv": [0, 42]}
+					]
+				},
+				{
+					"name": "LeftHandItem",
+					"parent": "hand_right",
+					"pivot": [7, 15, -2.5]
+				}
+			]
+		}
+	]
+}
