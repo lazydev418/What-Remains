@@ -1,6 +1,5 @@
 package ua.lazydev418.what_remains.entity.models;
 
-
 import com.geckolib.model.GeoModel;
 import com.geckolib.renderer.base.GeoRenderState;
 import net.minecraft.resources.Identifier;
