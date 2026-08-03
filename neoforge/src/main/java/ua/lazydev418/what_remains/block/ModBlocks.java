@@ -90,8 +90,6 @@ public class ModBlocks {
             -> new RuinsFire(copyPropsWithId(Blocks.SEA_LANTERN.properties(), Blocks.SEA_LANTERN).noOcclusion()) {
     });
 
-
-
     public static final DeferredBlock<Block> SMALL_POT = registerBlock("small_pot", properties
             -> new ModFacing(copyPropsWithId(Blocks.FLOWER_POT.properties(), Blocks.FLOWER_POT).noOcclusion()) {
     });

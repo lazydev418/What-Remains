@@ -9,9 +9,7 @@ import ua.lazydev418.what_remains.util.Constants;
 
 public class FireDemonSmallModel extends GeoModel<FireDemonSmallEntity> {
     private final Identifier modelPath = Identifier.fromNamespaceAndPath(Constants.MOD_ID, "fire_demon_small");
-    // Looks for an animations file at '/assets/examplemod/geckolib/animations/example_entity.animation.json'
     private final Identifier animationsPath = Identifier.fromNamespaceAndPath(Constants.MOD_ID, "fire_demon_small");
-    // Looks for a texture file at '/assets/examplemod/textures/example_entity.png'
     private final Identifier texturePath = Identifier.fromNamespaceAndPath(Constants.MOD_ID, "textures/entity/fire_demon_small.png");
 
     @Override

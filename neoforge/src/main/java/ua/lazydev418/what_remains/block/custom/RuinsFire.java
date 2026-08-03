@@ -23,7 +23,7 @@ public class RuinsFire extends BaseEntityBlock {
     public static final IntegerProperty STATE = IntegerProperty.create("state", 0, 2);
 
     public RuinsFire(Properties properties) {
-        super(properties);
+        super(properties.noOcclusion().noCollision());
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(STATE, 2));
     }

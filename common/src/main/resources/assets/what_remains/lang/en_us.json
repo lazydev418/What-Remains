@@ -1,3 +1,20 @@
 {
-  "gui.creative_tab.what_remains": "What Remains"
+  "gui.creative_tab.what_remains": "What Remains",
+  "block.what_remains.ruins_bricks": "Ruins Bricks",
+  "block.what_remains.ruins_bricks_stairs": "Ruins Bricks Stairs",
+  "block.what_remains.ruins_bricks_slab": "Ruins Bricks Slab",
+  "block.what_remains.ruins_bricks_wall": "Ruins Bricks Wall",
+  "block.what_remains.ruins_bricks_cracked": "Cracked Ruins Bricks",
+  "block.what_remains.ruins_bricks_cracked_stairs": "Cracked Ruins Bricks Stairs",
+  "block.what_remains.ruins_bricks_cracked_slab": "Cracked Ruins Bricks Slab",
+  "block.what_remains.ruins_bricks_cracked_wall": "Cracked Ruins Bricks Wall",
+  "block.what_remains.ruins_bricks_mossy": "Mossy Ruins Bricks",
+  "block.what_remains.ruins_bricks_mossy_stairs": "Mossy Ruins Bricks Stairs",
+  "block.what_remains.ruins_bricks_mossy_slab": "Mossy Ruins Bricks Slab",
+  "block.what_remains.ruins_bricks_mossy_wall": "Mossy Ruins Bricks Wall",
+  "block.what_remains.tall_torch": "Tall Torch",
+  "block.what_remains.ruins_statue": "Ruins Statue",
+  "block.what_remains.ruins_fire": "Ruins Fire",
+  "block.what_remains.ruins_fireplace_vase": "Ruins Fireplace Vase",
+  "block.what_remains.fire_crystal": "Fire Crystal"
 }
