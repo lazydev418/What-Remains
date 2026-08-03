@@ -5,6 +5,7 @@ import com.geckolib.animatable.instance.AnimatableInstanceCache;
 import com.geckolib.animatable.manager.AnimatableManager;
 import com.geckolib.constant.DefaultAnimations;
 import com.geckolib.util.GeckoLibUtil;
+import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -13,14 +14,13 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.ai.goal.target.TargetGoal;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import ua.lazydev418.what_remains.entity.ai.StayNearCrystalGoal;
 import ua.lazydev418.what_remains.item.ModItems;
 
 import javax.annotation.Nullable;
@@ -70,8 +70,6 @@ public class FireDemonMediumEntity extends Monster implements GeoEntity {
         }
     }
 
-    /* SOUNDS */
-
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
@@ -98,5 +96,9 @@ public class FireDemonMediumEntity extends Monster implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.geoCache;
+    }
+
+    public void bindToCrystal(BlockPos crystalPos) {
+        this.goalSelector.addGoal(1, new StayNearCrystalGoal(this, crystalPos, 1.25D, 16.0F));
     }
 }
