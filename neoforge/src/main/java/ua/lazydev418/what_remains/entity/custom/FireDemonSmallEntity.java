@@ -3,13 +3,8 @@ package ua.lazydev418.what_remains.entity.custom;
 import com.geckolib.animatable.GeoEntity;
 import com.geckolib.animatable.instance.AnimatableInstanceCache;
 import com.geckolib.animatable.manager.AnimatableManager;
-import com.geckolib.animation.object.PlayState;
 import com.geckolib.constant.DefaultAnimations;
-import com.geckolib.service.GeckoLibEvents;
 import com.geckolib.util.GeckoLibUtil;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -20,7 +15,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
@@ -68,8 +62,6 @@ public class FireDemonSmallEntity extends Monster implements GeoEntity {
             this.setupAnimationStates();
         }
     }
-
-    /* SOUNDS */
 
     @Nullable
     @Override
