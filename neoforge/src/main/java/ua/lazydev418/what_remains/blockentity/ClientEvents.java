@@ -6,6 +6,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import ua.lazydev418.what_remains.blockentity.models.FireCrystalRender;
 import ua.lazydev418.what_remains.entity.ModEntities;
+import ua.lazydev418.what_remains.entity.models.FireDemonChainsHandsRender;
 import ua.lazydev418.what_remains.entity.models.FireDemonMediumRender;
 import ua.lazydev418.what_remains.entity.models.FireDemonSmallRender;
 import ua.lazydev418.what_remains.util.Constants;
@@ -23,5 +24,8 @@ public class ClientEvents {
 
         event.registerEntityRenderer(ModEntities.FIRE_DEMON_MEDIUM.get(),
                 FireDemonMediumRender::new);
+
+        event.registerEntityRenderer(ModEntities.FIRE_DEMON_CHAIN_HANDS.get(),
+                FireDemonChainsHandsRender::new);
     }
 }

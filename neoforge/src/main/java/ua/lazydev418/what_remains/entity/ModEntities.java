@@ -4,6 +4,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import ua.lazydev418.what_remains.entity.custom.FireDemonChainHandsEntity;
 import ua.lazydev418.what_remains.entity.custom.FireDemonMediumEntity;
 import ua.lazydev418.what_remains.entity.custom.FireDemonSmallEntity;
 import ua.lazydev418.what_remains.util.Constants;
@@ -19,6 +20,10 @@ public class ModEntities {
 
     public static final Supplier<EntityType<FireDemonMediumEntity>> FIRE_DEMON_MEDIUM =
             ENTITY_TYPES.registerEntityType("fire_demon_medium", FireDemonMediumEntity::new, MobCategory.MONSTER);
+
+    public static final Supplier<EntityType<FireDemonChainHandsEntity>> FIRE_DEMON_CHAIN_HANDS =
+            ENTITY_TYPES.registerEntityType("fire_demon_chain_hands", FireDemonChainHandsEntity::new, MobCategory.MONSTER);
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

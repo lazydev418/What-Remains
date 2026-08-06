@@ -6,7 +6,6 @@ import com.geckolib.animatable.manager.AnimatableManager;
 import com.geckolib.animation.RawAnimation;
 import com.geckolib.constant.DefaultAnimations;
 import com.geckolib.util.GeckoLibUtil;
-import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
@@ -26,23 +25,24 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import ua.lazydev418.what_remains.entity.ai.FireDemonChainHandMeleeAttackAnimGoal;
-import ua.lazydev418.what_remains.entity.ai.FireDemonMediumMeleeAttackAnimGoal;
-import ua.lazydev418.what_remains.entity.ai.StayNearCrystalGoal;
 import ua.lazydev418.what_remains.item.ModItems;
 
 import javax.annotation.Nullable;
 
-public class FireDemonMediumEntity extends Monster implements GeoEntity {
+public class FireDemonChainHandsEntity extends Monster implements GeoEntity {
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
 
-    protected static final RawAnimation ATTACK = RawAnimation.begin().thenPlayXTimes("attack", 1);
-    protected static final RawAnimation ATTACK2 = RawAnimation.begin().thenPlayXTimes("attack2", 1);
+    protected static final RawAnimation ATTACK_LEFT = RawAnimation.begin().thenPlayXTimes("attack_left", 1);
+    protected static final RawAnimation ATTACK_RIGHT = RawAnimation.begin().thenPlayXTimes("attack_right", 1);
+    protected static final RawAnimation ATTACK_SPIN = RawAnimation.begin().thenPlayXTimes("attack_spin", 1);
+    protected static final RawAnimation ATTACK_GROUND_WAVE = RawAnimation.begin().thenPlayXTimes("attack_ground_wave", 1);
 
-    public FireDemonMediumEntity(EntityType<? extends Monster> entityType, Level level) {
+
+    public FireDemonChainHandsEntity(EntityType<? extends Monster> entityType, Level level) {
         super(entityType, level);
         this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(ModItems.FIRE_SWORD.get()));
     }
@@ -51,7 +51,7 @@ public class FireDemonMediumEntity extends Monster implements GeoEntity {
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
 
-        this.goalSelector.addGoal(1, new FireDemonMediumMeleeAttackAnimGoal(this));
+        this.goalSelector.addGoal(1, new FireDemonChainHandMeleeAttackAnimGoal(this));
 
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this, new Class[0]));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, true));
@@ -87,6 +87,8 @@ public class FireDemonMediumEntity extends Monster implements GeoEntity {
         }
     }
 
+    /* SOUNDS */
+
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
@@ -113,8 +115,10 @@ public class FireDemonMediumEntity extends Monster implements GeoEntity {
 
         controllers.add(
                 DefaultAnimations.triggerOnlyController()
-                        .triggerableAnim("attack", ATTACK)
-                        .triggerableAnim("attack2", ATTACK2)
+                        .triggerableAnim("attack_left", ATTACK_LEFT)
+                        .triggerableAnim("attack_right", ATTACK_RIGHT)
+                        .triggerableAnim("attack_spin", ATTACK_SPIN) //Потрібно реалізувати
+                        .triggerableAnim("attack_ground_wave", ATTACK_GROUND_WAVE) //Це теж
                         //TODO v
                         //.triggerableAnim("death", DEATH)
         );
@@ -123,9 +127,5 @@ public class FireDemonMediumEntity extends Monster implements GeoEntity {
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.geoCache;
-    }
-
-    public void bindToCrystal(BlockPos crystalPos) {
-        this.goalSelector.addGoal(1, new StayNearCrystalGoal(this, crystalPos, 1.25D, 16.0F));
     }
 }

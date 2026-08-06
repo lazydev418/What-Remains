@@ -5,6 +5,8 @@ import com.geckolib.animatable.instance.AnimatableInstanceCache;
 import com.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
 import com.geckolib.animatable.manager.AnimatableManager;
 import com.geckolib.constant.DefaultAnimations;
+import com.geckolib.constant.dataticket.DataTicket;
+import com.google.common.reflect.TypeToken;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
@@ -36,6 +38,10 @@ public class FireCrystalBlockEntity extends BlockEntity implements GeoBlockEntit
     private float health = maxHealth;
 
     private boolean hasSpawnedGuard = false;
+
+    public static final DataTicket<FireCrystalBlockEntity> BLOCK_ENTITY_TICKET =
+            DataTicket.create("block_entity_ticket", FireCrystalBlockEntity.class);
+
 
     private final ServerBossEvent bossEvent = new ServerBossEvent(
             UUID.randomUUID(),
